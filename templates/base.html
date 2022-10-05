@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename ='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <title>{% block title %}{% endblock %}</title>
+    <script src="{{ url_for('static', filename='js/form.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/animation.js') }}" defer></script>
+</head>
+
+<body>
+  <div class="skippy visually-hidden-focusable overflow-hidden">
+    <div class="container-fluid">
+      <a class="d-inline-flex p-2 m1" href="#content">Aller directement au contenu principal</a>
+    </div>
+  </div>
+  <header role="banner" class="col-12">
+    <img src="../static/img/header-1440x700@2x@2x.jpg" class="img-fluid" alt="Leshy, monstre de l'univers Witcher 3, dans une forêt">
+  </header>
+
+  <!-- Conteneur grille -->
+  <main id="content" role="main">
+     <!-- Navigation secondaire-->
+    <nav class="navbar-custom navbar-expand-sm navbar-dark" aria-label="Menu secondaire">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://en.cdprojektred.com/" target="_blank"><img src="../static/img/cd-projekt-logo-vertical.svg" alt="Logo de CD Projekt en position horizontale" aria-label="Retrouvez-nous sur CD Projekt Red (nouvelle fenêtre)"></a>
+        <span class="visually-hidden">Retrouvez-nous sur CD Projekt Red</span>
+  
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuSecondaire" aria-controls="menuSecondaire" aria-expanded="false" aria-label="Ouvrir le menu secondaire">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <nav class="navbar-collapse collapse " id="menuSecondaire" aria-label="Menu Barre de recherche">
+            <!-- Barre de recherche -->
+            <div class="container-searchbar">
+              <input type="search" class="form-control" id="search" placeholder="Rechercher un personnage" aria-label="Rechercher un personnage"> 
+  
+              <button type="button" data-bs-toggle="modal" data-bs-target="#resultatsDeLaRecherche" class="btn btn-icon" aria-label="Lancer la recherche">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                </svg>
+              </button>
+              
+              <div class="modal fade" id="resultatsDeLaRecherche" tabindex="-1" aria-labelledby="resultatsDeLaRecherche" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h2 class="modal-title" id="resultatsDeLaRecherche">Résultats de la recherche</h2>
+                    </div>
+                    <div class="modal-body ms-4">
+                      <a href="https://www.thewitcher.com/fr/witcher3" target="_blank" aria-label="Site officiel Witcher 3 (nouvelle fenêtre)">Site officiel Witcher 3</a><br>
+                      <a href="https://www.playgwent.com/fr" target="_blank" aria-label="Site officiel du Gwynt & sa Communauté (nouvelle fenêtre)">Site officiel du Gwynt & sa Communauté</a><br>
+                      <a href="https://witcher-archive.fandom.com/fr/wiki/Accueil" target="_blank" aria-label="Wiki Witcher (nouvelle fenêtre)">Wiki Witcher</a><br>
+                      <a href="https://www.supersoluce.com/soluce/witcher-3-wild-hunt/soluce-witcher-3-wild-hunt" target="_blank" aria-label="Solution complète du jeu Witcher 3 (nouvelle fenêtre)">Solute complète du jeu Witcher 3</a>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-custom" data-bs-dismiss="modal" aria-label="Fermer">Fermer</button>
+                    </div>
+                  </div>  
+                </div>
+              </div>
+            </div>
+    
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Partager</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Connexion</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </nav>
+  
+    <div class="custom-row-0">
+      <!-- Colonne gauche - Navigation Principale -->
+     
+        <nav class="navbar main-nav py-5" aria-label="Menu Principal">
+          <ul class="nav flex-column">
+            <li class="nav-item mb-3">
+              <a class="nav-link {{"active" if page_active == "Accueil" }}" {{'aria-current="page"' if page_active == "Accueil"}} href="/">Accueil</a>
+            </li>
+            <li class="nav-item mb-3">
+              <a class="nav-link {{"active" if page_active == "Création" }}" {{'aria-current="page"' if page_active == "Création"}} href="/create">Création</a>
+            </li>
+            <li class="nav-item mb-3">
+              <a class="nav-link {{"active" if page_active == "Personnages" }}" {{'aria-current="page"' if page_active == "Personnages"}} href="/characters">Personnages</a>
+            </li>
+            <li class="nav-item mb3">
+              <a class="nav-link {{"active" if page_active == "Par défaut" }}" {{'aria-current="page"' if page_active == "Par défaut"}} href="/default">Par défaut</a>
+            </li>
+          </ul>
+        </nav>
+
+      <section class="col-sm-12 col-md-10 py-5">
+        <div class="container-row">
+        {% block bodyIndex %}{% endblock %}
+        {% block bodyCreate %}{% endblock %}
+        {% block bodyCharacters %}{% endblock %}
+        {% block bodyDefault%}{% endblock %}
+        </div>
+      </section>
+    </div>
+     
+  </main>
+  <footer class="col-sm-md-lg-12 py-5" role="contentinfo">
+    <!-- Conteneur grille -->
+    <div class="container-fluid px-0">
+      <!-- Grille 12 -->
+      <div class="row g-0">
+       <!-- Conteneur logo et image -->
+        <div class="container-logo-footer"> 
+          <img src="../static/img/cd-projekt-logo-horizontal.svg" alt="Logo de CD Projekt en position verticale">
+          <figure class="text-center">
+            <blockquote class="blockquote">
+              <p>Ce monde n’a pas besoin d’un héros, il a besoin d’un professionnel</p>
+            </blockquote>
+            <figcaption class="blockquote-footer">
+             <cite>Géralt de Riv</cite>
+            </figcaption>
+          </figure>
+          <div class="container-svg">
+            <img src="../static/img/icon-sign-aard.svg" alt="Icône du Signe d'Aard">
+            <img src="../static/img/icon-sign-igni.svg" alt="Icône du Signe d'Igni">
+            <img src="../static/img/icon_sign-yrden.svg" alt="Icône du Signe d'Yrden">
+            <img src="../static/img/icon-sign-quen.svg" alt="Icône du Signe de Quen">
+            <img src="../static/img/icon-sign-axii.svg" alt="Icône du Signe d'Axii">
+          </div>
+        </div>
+    
+        <div class="container-nav-footer">
+          <!-- Colonne gauche  -->
+          <div class="nav-footer">
+          <span class="title-nav-footer">Plan du site</span>
+          <nav aria-label="Menu Plan du site"> 
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/create">Création</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/characters">Personnages</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/default">Par défaut</a>
+              </li>
+            </ul>
+          </nav>
+          </div>
+          <!-- Colonne centrale -->
+          <div class="nav-footer">
+          <span class="title-nav-footer">Ressources</span>
+           <nav aria-label="Menu Ressources">
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:contact@mail.com">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Aide</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Politique de confidentialité</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Conditions d'utilisation</a>
+              </li>
+            </ul>
+           </nav>
+          </div>
+          <!-- Colonne droite  -->
+          <div class="nav-footer">
+          <span class="title-nav-footer">Réseau sociaux</span>
+          <nav aria-label="Menu Réseau sociaux">
+            <div class="nav">
+              <div class="container-icon-social">
+                <a href="https://fr-ca.facebook.com/CDPROJEKTRED/" target="_blank" aria-label="Retrouvez-nous sur Facebook (nouvelle fenêtre)">
+                  <span class="visually-hidden">Retrouvez-nous sur Facebook</span>
+                  <i class="bi bi-facebook me-4" role="img" aria-label="Facebook"></i></a>
+                <a href="https://twitter.com/CDPROJEKTRED" target="_blank" aria-label="Retrouvez-nous sur Twitter (nouvelle fenêtre)">
+                  <span class="visually-hidden">Retrouvez-nous sur Twitter</span>
+                  <i class="bi bi-twitter me-4" role="img" aria-label="Twitter"></i></a>
+                <a href="https://www.youtube.com/c/CdpredStudio" target="_blank" aria-label="Retrouvez-nous sur Youtube (nouvelle fenêtre)">
+                  <span class="visually-hidden">Retrouvez-nous sur Youtube</span>
+                  <i class="bi bi-youtube" role="img" aria-label="Youtube"></i></a>
+              </div>
+            </div>
+          </nav>
+          </div>
+        </div>
+         <!-- Copyrights  -->
+        <small class="text-center">© 2022 - Tous droits réservés.</small>
+      </div>
+    </div>
+  </footer>    
+</body>
+</html>

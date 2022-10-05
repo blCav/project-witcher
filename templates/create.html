@@ -1,0 +1,244 @@
+{% extends 'base.html' %}
+
+{% block title %}Créer{% endblock %}
+
+{% block bodyCreate %}
+
+<!-- Colonne centrale  -->
+<!-- fil d'ariane -->
+<nav class="col-sm-md-lg-12 breadcrumb px-0" aria-label="fil d'ariane">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+      <li class="breadcrumb-item"><a class="active" href="/create" aria-current="page">Création</a></li>
+    </ol>
+</nav>
+<div class="custom-row-0 px-4">
+<div class="col-sm-md-lg-12 mb-5 px-0">
+  <h1>Création de <span>personnage</span></h1>
+  <p class="h5">Bienvenue à toi, Voyageur.se ! Ici tu vas pouvoir créer le personnage qui te représentera tout au long de ton aventure !</p>
+</div>
+  
+<form class="custom-row-0 px-0" action="https://philippefleury.com/backend.php" id="form" name="form" method="POST">
+
+  <!-- Colonne gauche  -->
+  <fieldset class="col-sm-md-12-lg-3 px-0 me-5">
+    <legend class="legend-title mb-4">Classe</legend>
+    <p class="mb-4">Choississez la classe du personnage.</p>
+    <div class="container-classe">
+      <figure class="figure">
+        <img src="/static/img/avatar_sorceleur2@2x.jpg" class="figure-img img-fluid" alt="Avatar de Sorceleur">
+        <figcaption class="visually-hidden">Sorceleur</figcaption>   
+      </figure>
+      <div class="form-check mt-1 mb-3">
+        <input class="form-check-input" type="radio" name="classe_du_personnage" value="sorceleur" id="sorceleur" aria-label="classe sorceleur">
+        <label class="form-check-label title-classe" for="sorceleur">Sorceleur</label>
+      </div>
+     
+      <figure class="figure">
+        <img src="/static/img/avatar_magicienne2@2x.jpg" class="figure-img img-fluid" alt="Avatar de Magicienne">
+        <figcaption class="visually-hidden">Magicienne</figcaption>
+      </figure>
+      <div class="form-check mt-1 mb-3">
+        <input class="form-check-input" type="radio" name="classe_du_personnage" value="magicienne" id="magicienne" aria-label="classe magicienne">
+        <label class="form-check-label title-classe" for="magicienne">Magicienne</label>
+      </div>
+
+      <figure class="figure">
+        <img src="/static/img/avatar_barde2@2x.jpg" class="figure-img img-fluid" alt="Avatar de Barde">
+        <figcaption class="visually-hidden">Barde</figcaption>
+      </figure>
+      <div class="form-check mt-1 mb-3">
+        <input class="form-check-input" type="radio" name="classe_du_personnage" value="barde" id="barde" aria-label="classe barde">
+        <label class="form-check-label title-classe" for="barde">Barde</label>
+      </div>
+      <figure class="figure">
+        <img src="/static/img/avatar_monster2@2x.jpg" class="figure-img img-fluid" alt="Avatar de Monstre">
+        <figcaption class="visually-hidden">Monstre</figcaption>
+      </figure>
+      <div class="form-check mt-1">
+        <input class="form-check-input" type="radio" name="classe_du_personnage" value="monstre" id="monstre" aria-label="classe monstre">
+        <label class="form-check-label title-classe" for="monstre">Monstre</label>
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- Colonne droite  -->
+  <div class="col-sm-md-12-lg px-0">
+
+    <!-- Caractéristiques -->
+    <fieldset class="col-sm-md-12-lg px-0 mb-5">
+      <legend class="legend-title-w80 mb-4">Caractéristiques</legend>
+      <p class="text-description mb-4">Choississez le nom, la faction de jeu et le niveau du personnage.</p>
+      <div class="mb-4">
+        <label for="nomPersonnage" class="form-label">Nom du personnage</label>
+        <input type="text" class="form-control" name="nom_du_personnage" id="nomPersonnage" placeholder="Écrire le nom du personnage" aria-label="nom du personnage">
+        <div id="aideNomPersonnage" class="form-text">Le nom du personnage ne doit pas contenir de caractères spéciaux.</div>
+      </div>
+    
+      <p class="h4">Faction</p>
+      <div class="d-flex mb-4">
+        <div class="container-radio">
+          <div class="form-check mb-1 me-5">
+            <input class="form-check-input" type="radio" name="faction_de_jeu" value="royaume du nord" id="royaume_du_nord" aria-label="royaume du nord">
+            <label class="form-check-label" for="royaume_du_nord">Royaume du Nord</label>
+          </div>
+          <div class="form-check mb-1 me-5">
+            <input class="form-check-input" type="radio" name="faction_de_jeu" value="niflgaard" id="nilfgaard" aria-label="niflgaard">
+            <label class="form-check-label" for="nilfgaard">Nilfgaard</label>
+          </div>
+        </div>
+        <div class="container-radio me-5">
+            <div class="form-check mb-1">
+              <input class="form-check-input" type="radio" name="faction_de_jeu" value="scoia'tael" id="scoia_tael" aria-label="scoia'tael">
+              <label class="form-check-label" for="scoia_tael">Scoia'tael</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="faction_de_jeu" value="monstre" id="Monstre" aria-label="monstre">
+              <label class="form-check-label" for="Monstre">Monstre</label>
+            </div>
+        </div>
+        <div class="container-radio">
+          <div class="form-check mb-1">
+            <input class="form-check-input" type="radio" name="faction_de_jeu" value="skellige" id="skellige" aria-label="skellige">
+            <label class="form-check-label" for="skellige">Skellige</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="faction_de_jeu" value="neutre" id="neutre" aria-label="neutre">
+            <label class="form-check-label" for="neutre">Neutre</label>
+          </div>
+        </div>    
+      </div>
+
+      <div>
+        <label for="niveauPersonnage" class="form-label">Niveau du personnage</label>
+        <input type="number" class="form-control w100" name="niveau_du_personnage" id="niveauPersonnage" placeholder="1" min="1" max="40" aria-label="niveau du personnage">
+        <div id="aideNiveauPersonnage" class="form-text">Le nombre du niveau ne doit pas dépasser 40</div>
+      </div>
+    </fieldset>
+
+    <!-- Équipement-->
+    <fieldset class="col-sm-md-12-lg  px-0 mb-5">
+      <legend class="legend-title-w80 mb-4">Équipement</legend>
+      <p class="w80 mb-4">Choississez la couleur de l'équipement, les armes principale et secondaire, et le type d'armure du personnage.</p>
+
+      <div class="mb-3">
+        <label for="couleurEquipement" class="form-label" aria-label="couleur">Couleur</label>
+        <input type="color" class="form-control form-control-color" name="couleur_de_l'équipement" id="couleurEquipement" value="#563d7c" title="Choisir la couleur de l'équipement">
+      </div>
+
+      <div class="mb-3">
+        <label for="armePrincipale" class="form-label mb-1">Arme</label>
+        <input class="form-control" list="datalistOptionsArmePrincipale" name="arme_principale" id="armePrincipale" placeholder="Veuillez choisir une arme principale" aria-label="arme principale">
+        <datalist class="mb-3" id="datalistOptionsArmePrincipale">
+          <option value="Épée de Fer">
+          <option value="Sceptre du Djinn">
+          <option value="Marteau des Royaumes du Nord">
+          <option value="Luth des Muses">
+          <option value="Dague des Moires"></option>
+          <option value="Crocs de Tueur"></option>
+        </datalist>
+      </div>
+
+      <div class="mb-3">
+        <label for="armeSecondaire" class="form-label mb-1">Arme secondaire</label>
+        <input class="form-control" list="datalistOptionsArmeSecondaire" name="arme_secondaire" id="armeSecondaire" placeholder="Veuillez choisir une arme secondaire" aria-label="arme secondaire">
+        <datalist class="mb-3" id="datalistOptionsArmeSecondaire">
+          <option value="Épée d'Argent">
+          <option value="Crâne de Crystal">
+          <option value="Poignard de Nilfgaard">
+          <option value="Arbalète de la Chasse Sauvage"></option>
+          <option value="Bombes du Feu Éternel">
+          <option value="Griffes Empoisonnées"></option>
+        </datalist>
+      </div>
+
+      <div>
+        <label for="armure" class="form-label mb-1">Armure</label>
+        <input class="form-control" list="datalistOptionsArmure" name="armure" id="armure" placeholder="Veuillez choisir une arme" aria-label="armure">
+        <datalist class="mb-3" id="datalistOptionsArmure">
+          <option value="Armure de l'École du Loup">
+          <option value="Armure des Chasseurs de Sorcières">
+          <option value="Robe de la Loge des Magicienne">
+          <option value="Tenue de Courtisan.ne Élégant.e">
+          <option value="Peau renforcée de monstre"></option>
+          <option value="Serviette de bain">
+        </datalist>
+      </div>
+    </fieldset>
+   
+    <fieldset class="col-sm-md-12-lg  px-0 mb-5">
+        <legend class="legend-title-w80 mb-4">Compétences</legend>
+        <p class="w80 mb-4">Choississez la spécialité et définissez les points de compétences du personnage.</p>
+        <div class="mb-4">
+          <label for="spécialité" class="form-label mb-1">Spécialité</label>
+          <input class="form-control" list="datalistOptionsSpécialité" name="specialité" id="spécialité" placeholder="Veuillez choisir une spécialité" aria-label="spécialité">
+          <datalist class="mb-3" id="datalistOptionsSpécialité">
+            <option value="Alchimie">
+            <option value="Charisme">
+            <option value="Combat">
+            <option value="Mutagène">
+            <option value="Signes">
+            <option value="Techniques">
+          </datalist>
+        </div>
+      
+        <div class="d-flex justify-content-between container-range">
+          <label for="chaos" class="form-label">Chaos</label>
+          <span class="range-result" data-input="chaos"></span>
+        </div>
+        <input type="range" class="form-range" id="chaos" step="1" min="0" max="100" name="chaos" aria-label="compétence chaos">
+
+        <div class="d-flex justify-content-between container-range">
+          <label for="chance" class="form-label">Chance</label>
+          <span class="range-result" data-input="chance"></span>
+        </div>
+        <input type="range" class="form-range container-range" id="chance" step="1" min="0" max="100" name="chance" aria-label="compétence chance">
+
+        <div class="d-flex justify-content-between container-range">
+          <label for="degats" class="form-label">Dégats</label>
+          <span class="range-result" data-input="degats"></span>
+        </div>
+        <input type="range" class="form-range" id="degats" step="1" min="0" max="100" name="degats" aria-label="compétence dégats">
+
+        <div class="d-flex justify-content-between container-range">
+          <label for="defense" class="form-label">Défense</label>
+          <span class="range-result" data-input="defense"></span>
+        </div>
+        <input type="range" class="form-range" id="defense" step="1" min="0" max="100" name="defense"  aria-label="compétence défense"> 
+
+        <div class="d-flex justify-content-between container-range">
+          <label for="endurance" class="form-label">Endurance</label>
+          <span class="range-result" data-input="endurance"></span>
+        </div>
+        <input type="range" class="form-range" id="endurance" step="1" min="0" max="100" name="endurance" aria-label="compétence endurance">
+
+        <div class="d-flex justify-content-between container-range">
+          <label for="morale" class="form-label">Sens Moral</label>
+          <span class="range-result" data-input="morale"></span>
+        </div>
+        <input type="range" class="form-range" id="morale" step="1" min="0" max="100" name="sens moral" aria-label="compétence sens moral">
+    </fieldset>
+
+    <fieldset class="col-sm-md-12-lg px-0">
+        <legend class="legend-title-w80 mb-4">OPTION</legend>
+        <p class="w80 mb-4">Nom d'un noyeur ! Les avatars par défaut ne te conviennent pas ? Pas de problème ! Si tu le souhaites, tu peux importer ton propre avatar, ou que dis-je, ta propre photo !</p>
+           <div class="mb-3" role="group" aria-labelledby="télécharge_ton_avatar">
+            <label for="télécharge_ton_avatar" class="form-label">Option : Télécharge ton avatar ou ta photo ici !</label>
+            <input class="form-control mb-5" type="file" name="télécharge_ton_avatar" id="télécharge_ton_avatar" aria-label="télécharge_ton_avatar">
+         </div>
+         <div class="d-flex justifiy-content-center">
+          <button type="button" class="btn btn-outline-secondary me-3">
+            <span class="visually-hidden">Créer un personnage aléatoire</span>
+            <i class="bi bi-dice-6" role="img" aria-label="Bouton personnage aléatoire"></i></button>
+          <div class="d-flex">
+            <button type="reset" class="btn btn-outline-secondary me-3">Réintialiser</button>
+            <button type="submit" class="btn btn-custom">Créer le personnage</button>
+          </div>
+        </div>
+    </fieldset> 
+</div>
+</form>
+</div>
+
+<script scr="/static/js/form.js" defer></script>
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block bodyIndex %}
+<div class="container-index-left">
+  <!-- Colonne centrale - Carousel -->
+  <div id="WitcherCharactersCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+       <button type="button" data-bs-target="#WitcherCharactersCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Carte de Gwynt de Geralt de Riv"></button>
+       <button type="button" data-bs-target="#WitcherCharactersCarousel" data-bs-slide-to="1" aria-label="Carte de Gwynt de Yennefer de Vengerberg"></button>
+       <button type="button" data-bs-target="#WitcherCharactersCarousel" data-bs-slide-to="2" aria-label="Carte de Gwynt de Jaskier"></button>
+       <button type="button" data-bs-target="#WitcherCharactersCarousel" data-bs-slide-to="3" aria-label="Carte de Gwynt de Goule"></button>
+    </div>
+    <div class="carousel-inner">
+      <!-- classe 1 - Sorceleur -->
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="../static/img/carousel-sorceleur.jpg" class="d-block" alt="Carte de Gwynt de Geralt de Riv, Witcher 3">
+        <div class="carousel-caption">
+          <span class="h5">Sorceleur</span>
+          <p>Les sorceleurs sont des mutants avec des capacités surnaturelles, qui reçoivent un entrainement spécial ainsi qu'une préparation en vue de devenir des tueurs de monstres professionnels à embaucher. Sur le continent, "Sorceleur" est un terme péjoratif dérivé du mot sorcière (wiedźma) et utilisé par les magiciens pour décrire les hommes dotés de pouvoirs magiques limités.</p>
+        </div>
+      </div>
+      <!-- classe 2 - Magicienne -->
+      <div class="carousel-item" data-bs-interval="6000">
+        <img src="../static/img/carousel-magicienne.jpg" class="d-block" alt="Carte de Gwynt de Yennefer de Vengerberg, Witcher 3">
+        <div class="carousel-caption">
+          <span class="h5">Magicienne</span>
+          <p>Les Magiciens sont des personnes compétentes et éduquées dans l'art d'utiliser la magie. Seuls de rares personnes ont le potentiel de devenir des mages et beaucoup de ceux qui l'ont sont tombés dans la folie. Certaines personnes, que l'on appelle des Sources, doivent apprendre à contrôler rapidement leurs pouvoirs, faute de quoi ils sombreraient rapidement dans la démence.</p>
+        </div>
+      </div>
+     <!-- classe 3 - Barde -->
+      <div class="carousel-item" data-bs-interval="6000">
+        <img src="../static/img/carousel-barde.jpg" class="d-block" alt="Carte de Gwynt de Jaskier, Witcher 3">
+        <div class="carousel-caption">
+          <span class="h5">Barde</span>
+          <p>Le Barde est un artiste itinérant qui chante des chansons, les siennes ou celles des autres, en s'accompagnant d'un instrument, généralement une guitare, un luth ou autres instruments à cordes. Dans au moins 90% des ballades et des chansons chantées par les musiciens itinérants, les faits ont été changés, très probablement pour "augmenter le romantisme".</p>
+        </div>
+      </div>
+     <!-- classe 4 - Monstre -->
+      <div class="carousel-item">
+        <img src="../static/img/carousel-monstre.jpg" class="d-block" alt="Carte de Gwynt de Goule, Witcher 3">
+        <div class="carousel-caption">
+          <span class="h5">Monstre</span>
+          <p>Les goules les plus communes sont des nécrophages et errent habituellement en bande autour de ceux-ci. Pour une goule, un humain vivant  est une matière première qui doit être traitée avant de devenir de la chair fraîche. Dechiqueté en morceaux par ses crocs et ses griffes, le cadavre humain devrait être laissé pour faisander.</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#WitcherCharactersCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Précédent</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#WitcherCharactersCarousel" data-bs-slide="next">
+     <span class="carousel-control-next-icon" aria-hidden="true"></span>
+     <span class="visually-hidden">Suivant</span>
+    </button>
+  </div>
+</div>
+
+  <!-- Colonne droite  -->
+<div class="container-index-right ">
+   <h1 class="mb-1">THE WITCHER 3 : <br><span>WILD HUNT</span></h1>
+  <div class="features mb-4">  
+    <span class="me-2">Action-RPG</span>
+    <div class="separator-horizontal me-2"></div>
+    <span class="me-2">Dark Fantasy</span>
+  </div>
+  <p>Basé sur l'univers médiéval-fantastique d'Andrzej Sapkowski, le jeu est situé dans un monde dark fantasy, suit les traces du sorceleur Geralt de Riv, un chasseur de monstres dont la fille adoptive, Ciri, est menacée par la Chasse sauvage. 
+  <br><br>
+  Des références sont faites au contenu des livres écrits par Sapkowski, mais l'intrigue est inédite et propose une conclusion à la trilogie entamée avec le premier jeu, sorti huit ans plus tôt. Contrairement aux deux autres opus de la série, The Witcher 3 prend place dans un monde ouvert en usant d'un point de vue à la troisième personne, et se concentre sur l'utilisation des talents de combat et de détective de Geralt pour mener à bien des contrats et explorer l'environnement. 
+  <br> <br>
+  Le tout se déroule dans le cadre d'une quête principale à plusieurs embranchements, qui peut se résoudre selon 36 fins différentes, et d'une multitude de missions secondaires.</p>
+</div>
+
+{% endblock %}

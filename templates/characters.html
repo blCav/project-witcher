@@ -1,0 +1,152 @@
+{% extends 'base.html' %}
+
+{% block title %}Personnages{% endblock %}
+
+{% block bodyCharacters %}
+
+
+
+<!-- Colonne centrale  -->
+<!-- fil d'ariane -->
+<nav class="col-sm-md-lg-12 breadcrumb px-0" aria-label="fil d'ariane">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Accueil</a></li>
+      <li class="breadcrumb-item"><a class="active" href="/characters" aria-current="page">Personnages</a></li>
+    </ol>
+</nav>
+<div class="custom-row-0 px-4">
+  <div class="col-sm-md-lg-12 mb-5 px-0">
+    <h1>Galerie des <span>personnages</span></h1>
+    <p class="h5">Félicitations Voyageur.se ! Tu peux maintenant admirer tes créations qui se sont transformées en Cartes de Gwynt !</p>
+  </div>
+
+      <!-- Colonne gauche  -->
+    <div class="container-desk-gauche js-scroll fade-in pe-4 mb-4">
+      <!-- Carte Sorceleur -->
+      <div class="card me-4">
+        <div class="card-header">
+          <div>
+            <h2>Geralt</h2>
+            <h3>Sorceleur</h3>
+          </div>
+          <div class="card-header-title black">
+            <span>15</span>
+          </div>
+        </div>
+        <img src="../static/img/avatar-card-sorceleur.jpg" alt="Carte de Gwynt Sorceleur">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Endurance<span>80</span></li>
+            <li class="list-group-item">Défense<span>85</span></li>
+            <li class="list-group-item">Dégats<span>90</span></li>
+            <li class="list-group-item">Chaos<span>15</span></li>  
+            <li class="list-group-item">Chance<span>10</span></li>  
+            <li class="list-group-item">Sens Moral<span>89</span></li>  
+          </ul>
+          <a href="https://sorceleur.fandom.com/wiki/Geralt_de_Riv" target="_blank" class="stretched-link" aria-label="Biographie de Géralt de Riv, Witcher 3 (nouvelle fenêtre)">
+            <span class="visually-hidden">Biographie de Géralt de Riv, Witcher 3</span></a> 
+        </div>
+        <div class="card-footer">
+          <blockquote class="blockquote">
+            <p>À choisir entre deux maux, je préfère ne pas choisir du tout.</p>
+          </blockquote>
+        </div>
+      </div>
+        <!-- Carte Magicienne -->
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <h2>Yennefer</h2>
+            <h3>Magicienne</h3>
+          </div>
+          <div class="card-header-title blue">
+            <span>07</span>
+          </div>
+        </div>
+        <img src="../static/img/avatar-card-magicienne.jpg" alt="Carte de Gwynt Magicienne">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Endurance<span>70</span></li>
+            <li class="list-group-item">Défense<span>82</span></li>
+            <li class="list-group-item">Dégats<span>90</span></li>
+            <li class="list-group-item">Chaos<span>95</span></li>  
+            <li class="list-group-item">Chance<span>60</span></li>  
+            <li class="list-group-item">Sens Moral<span>20</span></li>  
+          </ul>    
+        </div>
+        <a href="https://witcher-archive.fandom.com/fr/wiki/Yennefer" target="_blank" class="stretched-link custom-a" aria-label="Biographie de Yennefer de Vengerberg, Witcher 3 (nouvelle fenêtre)">
+            <span class="visually-hidden">Biographie de Yennefer de Vengerberg, Witcher 3</span></a>
+        <div class="card-footer">
+          <blockquote class="blockquote">
+            <p>La magie, c’est le Chaos, l’Art et la Science. C’est une malédiction, une bénédiction et un progrès.</p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  
+      <!-- Colonne droite  -->
+    <div class="container-desk-droite js-scroll fade-in pe-4 mb-4">
+       <!-- Carte Barde -->
+       <div class="card me-4">
+        <div class="card-header">
+          <div>
+            <h2>Jaskier</h2>
+            <h3>Barde</h3>
+          </div>
+          <div class="card-header-title red">
+            <span>02</span>
+          </div>
+        </div>
+        <img src="../static/img/avatar-card-barde.jpg" alt="Carte de Gwynt Barde">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Endurance<span>40</span></li>
+            <li class="list-group-item">Défense<span>60</span></li>
+            <li class="list-group-item">Dégats<span>60</span></li>
+            <li class="list-group-item">Chaos<span>0</span></li>  
+            <li class="list-group-item">Chance<span>90</span></li>  
+            <li class="list-group-item">Sens Moral<span>80</span></li>  
+          </ul>  
+          <a href="https://sorceleur.fandom.com/wiki/Julian_Alfred_Pankratz_de_Lettenhove" target="_blank" class="stretched-link" aria-label="Biographie de Jaskier, Witcher 3 (nouvelle fenêtre)">
+          <span class="visually-hidden">Biographie de Jaskier, Witcher 3</span></a>
+       </div>
+        <div class="card-footer">
+          <blockquote class="blockquote">
+            <p>Je ne mens pas, j'enjolive. Ça n'a rien à voir.</p>
+          </blockquote>
+        </div>
+      </div>
+    <!-- Carte Monstre -->
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <h2>Goule</h2>
+          <h3>Monstre</h3>
+        </div>
+        <div class="card-header-title purple">
+          <span>01</span>
+        </div>
+      </div>
+      <img src="../static/img/avatar-card-monstre.jpg" alt="Carte de Gwynt Monstre">
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Endurance<span>85</span></li>
+          <li class="list-group-item">Défense<span>60</span></li>
+          <li class="list-group-item">Dégats<span>70</span></li>
+          <li class="list-group-item">Chaos<span>0</span></li>  
+          <li class="list-group-item">Chance<span>15</span></li>  
+          <li class="list-group-item">Sens Moral<span>3</span></li>  
+        </ul> 
+        <a href="https://witcher-archive.fandom.com/fr/wiki/Goule" target="_blank" class=" stretched-link" aria-label="Biographie de Goule, Witcher 3 (nouvelle fenêtre)">
+          <span class="visually-hidden">Biographie de Goule, Witcher 3</span></a>
+      </div>
+      <div class="card-footer">
+        <blockquote class="blockquote">
+          <p>Si les goules font partie du cercle de la vie, c'est un cercle sacrément vicieux.</p>
+        </blockquote>
+      </div>
+    </div> 
+  </div>
+</div>
+
+{% endblock %}
